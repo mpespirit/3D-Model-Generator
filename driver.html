@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8" />
+      <title>Camera</title>
+      <link rel="stylesheet" href="driver.css">
+   </head>
+
+   <body onload="main()">
+      <canvas id="webgl" width="1001" height="1001">
+         Please use a browser that supports "canvas"
+      </canvas>
+      <br>
+      
+      <!-- Buttons-->
+      
+      <button onclick="clearCanv()" type="button">Clear</button>
+      <button onclick="resetCam()" type="button">Reset Camera</button>
+      <button onclick="save()" type="button">Save</button>
+      <button onclick="load()" type="button">Load</button>
+      <input type="file" id="fileName">
+    <table>
+      <td>
+        <!-- Rounded switch -->
+        Normals<br>
+        <label class="switch">
+          <input type="checkbox" onclick="normalToggle()">
+          <span class="slider round"></span>
+        </label>
+      </td>
+      <td>
+        Perspective<br>
+        <label class="switch">
+          <input type="checkbox" onclick="perspectiveToggle()">
+          <span class="slider round"></span>
+        </label>
+      </td>
+      <td>
+        Smooth<br>
+        <label class="switch">
+          <input type="checkbox" onclick="smoothToggle()">
+          <span class="slider round"></span>
+        </label>
+      </td>
+      <td>
+        Ambient<br>
+        <label class="switch">
+          <input type="checkbox" onclick="ambientToggle()" checked>
+          <span class="slider round"></span>
+        </label>
+      </td>
+      <td>
+        Specular<br>
+        <label class="switch">
+          <input type="checkbox" onclick="specularToggle()">
+          <span class="slider round"></span>
+        </label>
+      </td>
+      <td>
+        <!-- Gloss Slider -->
+        <form>
+          <input type="range" id="specSlider" name="Ns" min="1" max="20" value="1">
+          Value: <span id="value"></span>
+        </form>
+      </td>
+    </table>
+    
+    <p>
+    <u>Controls</u>
+    <br>
+    <b>Scroll</b> wheel to zoom in and out of the canvas in perspective mode. 
+    <br>
+    <b>Click</b> and <b>drag</b> the canvas to pan the camera.
+    <br>
+    <b>Click</b> wheel button and <b>scroll</b> wheel to zoom with camera.
+    </p>
+
+      <!-- Scripts-->
+      <script src="../lib/webgl-utils.js"></script>
+      <script src="../lib/webgl-debug.js"></script>
+      <script src="../lib/cuon-utils.js"></script>
+      <script src="../lib/cuon-matrix.js"></script>
+      <script src="../lib/ioSOR.js"></script>
+      <script src="main.js"></script>
+      <script src="matrix.js"></script>
+      <script src="normal.js"></script>
+      <script src="shaders.js"></script>
+      </body>
+</html>
